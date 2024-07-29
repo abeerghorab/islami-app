@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/My_theme.dart';
 import 'package:islami/home_screen.dart';
 
 void main() {
@@ -12,10 +13,11 @@ class IslamiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
       },
-      initialRoute: HomeScreen.routeName,
+      theme: MyThemeData.LightMode,
     );
   }
 }

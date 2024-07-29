@@ -14,18 +14,15 @@ class HomeScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         Scaffold(
-          backgroundColor: Colors.transparent,
+          //backgroundColor: Colors.transparent,
           appBar: AppBar(
-              backgroundColor: Colors.transparent,
+              // backgroundColor: Colors.transparent,
               centerTitle: true,
               title: Text(
-                "Islami",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 236, 124, 19),
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
+                "islami",
+                style: Theme.of(context).textTheme.headline1,
               )),
-        )
+        ),
       ],
 
       /**/
