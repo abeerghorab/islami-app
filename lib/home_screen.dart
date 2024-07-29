@@ -1,4 +1,7 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
+import 'package:islami/My_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,6 +25,21 @@ class HomeScreen extends StatelessWidget {
                 "islami",
                 style: Theme.of(context).textTheme.headline1,
               )),
+          body: Column(
+            children: [
+              Center(
+                child: Image.asset(
+                  "Assets/quran3.jpg",
+                  width: 150,
+                  height: 200,
+                ),
+              ),
+              /*Divider(
+                color: MyThemeData.primartLight,
+                thickness: 2,
+              )*/
+            ],
+          ),
         ),
       ],
 

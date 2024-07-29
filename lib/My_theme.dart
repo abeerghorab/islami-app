@@ -10,6 +10,7 @@ class MyThemeData {
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        // iconTheme: IconThemeData(color: whiteColor),
       ),
       textTheme: TextTheme(
           headline1: TextStyle(
