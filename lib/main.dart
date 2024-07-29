@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:islami/home_screen.dart';
 
 void main() {
-  runApp(const Islami_app());
+  runApp(const IslamiApp());
 }
 
-class Islami_app extends StatelessWidget {
-  const Islami_app({super.key});
+class IslamiApp extends StatelessWidget {
+  const IslamiApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+      },
+      initialRoute: HomeScreen.routeName,
+    );
   }
 }
