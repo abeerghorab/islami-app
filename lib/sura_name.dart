@@ -7,7 +7,11 @@ class SuraName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(name, style: Theme.of(context).textTheme.subtitle2),
+      child: Text(
+        name,
+        style: Theme.of(context).textTheme.subtitle2,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

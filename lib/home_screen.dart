@@ -126,7 +126,7 @@ class HomeScreen extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          "Assets/Homeground.jpg",
+          "Assets/ground10.jpg",
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.cover,
@@ -160,7 +160,13 @@ class HomeScreen extends StatelessWidget {
                 thickness: 2,
               ),
               Expanded(
-                child: ListView.builder(
+                child: ListView.separated(
+                  separatorBuilder: (context, index) {
+                    return Divider(
+                      color: MyThemeData.primartLight,
+                      thickness: 2,
+                    );
+                  },
                   itemBuilder: (context, index) {
                     return SuraName(name: names[index]);
                   },
