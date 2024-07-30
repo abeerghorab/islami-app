@@ -64,6 +64,10 @@ flutter:
     -  Assets/quran.jpg
     -  Assets/quran3.jpg
     -  Assets/ground10.jpg
+    -  Assets/tasbeh.jpg
+    -  Assets/radio.jpg
+    -  Assets/quran10.jpg
+    -  Assets/hadeth.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

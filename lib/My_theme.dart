@@ -12,6 +12,13 @@ class MyThemeData {
       elevation: 0,
       // iconTheme: IconThemeData(color: whiteColor),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: blackColor,
+      unselectedItemColor: whiteColor,
+      selectedLabelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      unselectedLabelStyle:
+          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    ),
     textTheme: TextTheme(
       headline1: TextStyle(
         fontSize: 30,

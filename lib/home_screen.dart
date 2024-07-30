@@ -129,15 +129,50 @@ class HomeScreen extends StatelessWidget {
           "Assets/ground10.jpg",
           width: double.infinity,
           height: double.infinity,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
         Scaffold(
           appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                "islami",
-                style: Theme.of(context).textTheme.headline1,
-              )),
+            centerTitle: true,
+            title: Text(
+              "islami",
+              style: Theme.of(context).textTheme.headline1,
+            ),
+          ),
+          bottomNavigationBar: Theme(
+            data: Theme.of(context)
+                .copyWith(canvasColor: Theme.of(context).primaryColor),
+            child: BottomNavigationBar(
+              items: [
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(
+                        "Assets/quran10.jpg",
+                      ),
+                      size: 50,
+                    ),
+                    label: "Quran"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage("Assets/hadeth.jpg"),
+                      size: 50,
+                    ),
+                    label: "hadeth"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage("Assets/tasbeh.jpg"),
+                      size: 50,
+                    ),
+                    label: "tasbeh"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage("Assets/radio.jpg"),
+                      size: 50,
+                    ),
+                    label: "radio"),
+              ],
+            ),
+          ),
           body: Column(
             children: [
               Center(
