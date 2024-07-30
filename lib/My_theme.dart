@@ -18,6 +18,10 @@ class MyThemeData {
         fontWeight: FontWeight.bold,
         color: whiteColor,
       ),
+      subtitle1: TextStyle(
+          fontSize: 25, fontWeight: FontWeight.w600, color: blackColor),
+      subtitle2: TextStyle(
+          fontSize: 25, fontWeight: FontWeight.w400, color: blackColor),
     ),
   );
   static ThemeData darkMode = ThemeData();
