@@ -67,6 +67,7 @@ flutter:
     -  Assets/icon_radio.png
     -  Assets/icon_quran.png
     -  Assets/icon_hadeth.png
+    -  Assets/files
   
  
   # An image asset can refer to one or more resolution-specific "variants", see
