@@ -5,6 +5,7 @@ class SuraDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     return Stack(
       children: [
         Image.asset(
@@ -17,7 +18,7 @@ class SuraDetailsScreen extends StatelessWidget {
           appBar: AppBar(
             centerTitle: true,
             title: Text(
-              "islami",
+              "${args.name}",
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
@@ -25,4 +26,11 @@ class SuraDetailsScreen extends StatelessWidget {
       ],
     );
   }
+}
+
+class SuraDetailsArgs {
+  //data class
+  String name;
+  int index;
+  SuraDetailsArgs({required this.name, required this.index});
 }

@@ -3,14 +3,16 @@ import 'package:islami/Quran/sura_details_Screen.dart';
 
 class SuraName extends StatelessWidget {
   String name;
-  SuraName({super.key, required this.name});
+  int index;
+  SuraName({super.key, required this.name, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed(SuraDetailsScreen.routeName);
+          Navigator.of(context).pushNamed(SuraDetailsScreen.routeName,
+              arguments: SuraDetailsArgs(name: name, index: index));
         },
         child: Text(
           name,
