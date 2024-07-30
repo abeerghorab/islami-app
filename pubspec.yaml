@@ -60,15 +60,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    -  Assets/Homeground.jpg
-    -  Assets/quran.jpg
+    -  Assets/icon_sebha.png
+    -  Assets/qur2an_screen_logo.png
     -  Assets/quran3.jpg
     -  Assets/ground10.jpg
-    -  Assets/tasbeh.jpg
-    -  Assets/radio.jpg
-    -  Assets/quran10.jpg
-    -  Assets/hadeth.jpg
-
+    -  Assets/icon_radio.png
+    -  Assets/icon_quran.png
+    -  Assets/icon_hadeth.png
+  
+ 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/sura_name.dart';
+import 'package:islami/Quran/sura_name.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -126,9 +126,9 @@ class QuranTab extends StatelessWidget {
       children: [
         Center(
           child: Image.asset(
-            "Assets/quran3.jpg",
-            width: 150,
-            height: 200,
+            "Assets/qur2an_screen_logo.png",
+            //width: 150,
+            // height: 200,
           ),
         ),
         Divider(
