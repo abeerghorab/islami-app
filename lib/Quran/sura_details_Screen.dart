@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/My_theme.dart';
+import 'package:islami/Quran/item_sura_details.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = "sura-details-screen";
@@ -15,11 +16,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
-    loadQuranFile(args.index);
+    if (verses.isEmpty) {
+      loadQuranFile(args.index);
+    }
+
     return Stack(
       children: [
         Image.asset(
-          "Assets/ground10.jpg",
+          "Assets/default_bg.png",
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -36,18 +40,24 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             decoration: BoxDecoration(
                 color: MyThemeData.whiteColor,
                 borderRadius: BorderRadius.circular(24)),
-            margin: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-            child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return Text(verses[index]);
-                },
-                separatorBuilder: (context, index) {
-                  return Divider(
-                    color: Theme.of(context).primaryColor,
-                    thickness: 2,
-                  );
-                },
-                itemCount: verses.length),
+            margin: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+            child: verses.length == 0
+                ? Center(
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  )
+                : ListView.separated(
+                    itemBuilder: (context, index) {
+                      return ItemSuraDetails(name: verses[index]);
+                    },
+                    separatorBuilder: (context, index) {
+                      return Divider(
+                        color: Theme.of(context).primaryColor,
+                        thickness: 2,
+                      );
+                    },
+                    itemCount: verses.length),
           ),
         ),
       ],
