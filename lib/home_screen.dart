@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:islami/My_theme.dart';
 
@@ -17,9 +15,7 @@ class HomeScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         Scaffold(
-          //backgroundColor: Colors.transparent,
           appBar: AppBar(
-              // backgroundColor: Colors.transparent,
               centerTitle: true,
               title: Text(
                 "islami",
@@ -34,16 +30,14 @@ class HomeScreen extends StatelessWidget {
                   height: 200,
                 ),
               ),
-              /*Divider(
+              Divider(
                 color: MyThemeData.primartLight,
                 thickness: 2,
-              )*/
+              )
             ],
           ),
         ),
       ],
-
-      /**/
     );
   }
 }
