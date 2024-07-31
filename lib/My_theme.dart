@@ -20,16 +20,19 @@ class MyThemeData {
           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     ),
     textTheme: TextTheme(
-      headline1: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-        color: blackColor,
-      ),
-      subtitle1: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w600, color: blackColor),
-      subtitle2: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w400, color: blackColor),
-    ),
+        headline1: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: blackColor,
+        ),
+        subtitle1: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.w600, color: blackColor),
+        subtitle2: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.w400, color: blackColor),
+        bodyText1: TextStyle(
+            fontSize: 20, color: blackColor, fontWeight: FontWeight.bold),
+        bodyText2: TextStyle(
+            fontSize: 25, color: blackColor, fontWeight: FontWeight.bold)),
   );
   static ThemeData darkMode = ThemeData();
 }
