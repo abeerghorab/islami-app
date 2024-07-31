@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami/Hadeth/hadeth_details_screen.dart';
 import 'package:islami/Hadeth/hadeth_tab.dart';
-import 'package:islami/Quran/sura_details_Screen.dart';
 
 class ItemHadethName extends StatelessWidget {
   Hadeth hadeth;
@@ -10,7 +10,10 @@ class ItemHadethName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context)
+              .pushNamed(HadethDetailsScreen.routeName, arguments: hadeth);
+        },
         child: Text(
           hadeth.title,
           style: Theme.of(context).textTheme.subtitle2,
