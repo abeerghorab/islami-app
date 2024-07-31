@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/Hadeth/item_hadeth_name.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _HadethTabState extends State<HadethTab> {
                     );
                   },
                   itemBuilder: (context, index) {
-                    return Text(allAhadeth[index].title);
+                    return ItemHadethName(hadeth: allAhadeth[index]);
                   },
                   itemCount: 50,
                 ),
