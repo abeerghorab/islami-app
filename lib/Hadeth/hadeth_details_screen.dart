@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:islami/Hadeth/hadeth_tab.dart';
+import 'package:islami/Hadeth/item_hadeth_details.dart';
 import 'package:islami/My_theme.dart';
-import 'package:islami/Quran/item_sura_details.dart';
 
 class HadethDetailsScreen extends StatefulWidget {
   static const String routeName = "hadeth-details-screen";
@@ -39,7 +39,7 @@ class _HadethDetailsScreenState extends State<HadethDetailsScreen> {
             margin: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return Text(args.content[index]);
+                return ItemHadethDetails(name: args.content[index]);
               },
               itemCount: args.content.length,
             ),
