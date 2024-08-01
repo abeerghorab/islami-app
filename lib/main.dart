@@ -4,6 +4,7 @@ import 'package:islami/Hadeth/hadeth_details_screen.dart';
 import 'package:islami/My_theme.dart';
 import 'package:islami/Quran/sura_details_Screen.dart';
 import 'package:islami/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const IslamiApp());
@@ -33,6 +34,10 @@ class IslamiApp extends StatelessWidget {
         nextScreen: HomeScreen(),
       ),
       theme: MyThemeData.LightMode,
+      darkTheme: MyThemeData.darkMode,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale("en"),
     );
   }
 }

@@ -4,6 +4,8 @@ import 'package:islami/Hadeth/hadeth_tab.dart';
 import 'package:islami/Quran/quran_tab.dart';
 import 'package:islami/home_tab/radio_tab.dart';
 import 'package:islami/home_tab/tasbeh_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/settings/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -30,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             centerTitle: true,
             title: Text(
-              "islami",
+              AppLocalizations.of(context)!.islami,
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
@@ -50,22 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Assets/icon_quran.png",
                       ),
                     ),
-                    label: "Quran"),
+                    label: AppLocalizations.of(context)!.quran),
                 BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage("Assets/icon_hadeth.png"),
                     ),
-                    label: "hadeth"),
+                    label: AppLocalizations.of(context)!.hadeth),
                 BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage("Assets/icon_sebha.png"),
                     ),
-                    label: "tasbeh"),
+                    label: AppLocalizations.of(context)!.tasbeh),
                 BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage("Assets/icon_radio.png"),
                     ),
-                    label: "radio"),
+                    label: AppLocalizations.of(context)!.radio),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.settings),
+                    label: AppLocalizations.of(context)!.settings),
               ],
             ),
           ),
@@ -75,5 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<Widget> tabs = [QuranTab(), HadethTab(), TasbehTab(), RadioTab()];
+  List<Widget> tabs = [
+    QuranTab(),
+    HadethTab(),
+    TasbehTab(),
+    RadioTab(),
+    SettingTab(),
+  ];
 }

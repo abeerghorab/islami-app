@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TasbehTab extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _TasbehTabState extends State<TasbehTab> {
           height: 10,
         ),
         Text(
-          "Tasbeh Number",
+          AppLocalizations.of(context)!.tasbehNumber,
           style: Theme.of(context).textTheme.bodyText1,
         ),
         Container(
