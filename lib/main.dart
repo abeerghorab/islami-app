@@ -5,16 +5,18 @@ import 'package:islami/My_theme.dart';
 import 'package:islami/Quran/sura_details_Screen.dart';
 import 'package:islami/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const IslamiApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => AppConfigProvider(), child: IslamiApp()));
 }
 
 class IslamiApp extends StatelessWidget {
-  const IslamiApp({super.key});
-
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //initialRoute: HomeScreen.routeName,
@@ -37,7 +39,7 @@ class IslamiApp extends StatelessWidget {
       darkTheme: MyThemeData.darkMode,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale("en"),
+      locale: Locale(provider.appLanguage),
     );
   }
 }
