@@ -25,6 +25,11 @@ class MyThemeData {
           fontWeight: FontWeight.bold,
           color: blackColor,
         ),
+        headline3: TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: whiteColor,
+        ),
         subtitle1: TextStyle(
             fontSize: 25, fontWeight: FontWeight.w600, color: blackColor),
         subtitle2: TextStyle(
