@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islami/My_theme.dart';
 import 'package:islami/Quran/item_sura_name.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/provider/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -123,6 +126,7 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Column(
       children: [
         Center(
@@ -133,7 +137,9 @@ class QuranTab extends StatelessWidget {
           ),
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: provider.isDarkMode()
+              ? MyThemeData.yellowColor
+              : MyThemeData.primartLight,
           thickness: 2,
         ),
         Text(
@@ -141,14 +147,18 @@ class QuranTab extends StatelessWidget {
           style: Theme.of(context).textTheme.subtitle1,
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: provider.isDarkMode()
+              ? MyThemeData.yellowColor
+              : MyThemeData.primartLight,
           thickness: 2,
         ),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) {
               return Divider(
-                color: Theme.of(context).primaryColor,
+                color: provider.isDarkMode()
+                    ? MyThemeData.yellowColor
+                    : MyThemeData.primartLight,
                 thickness: 2,
               );
             },

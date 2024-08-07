@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/My_theme.dart';
 import 'package:islami/provider/app_config_provider.dart';
 import 'package:islami/settings/language_bottom_sheet.dart';
+import 'package:islami/settings/theme_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
 class SettingTab extends StatefulWidget {
@@ -60,7 +61,7 @@ class _SettingTabState extends State<SettingTab> {
             height: 18,
           ),
           Text(
-            AppLocalizations.of(context)!.language,
+            AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -74,15 +75,15 @@ class _SettingTabState extends State<SettingTab> {
             ),
             child: InkWell(
               onTap: () {
-                showLanguageBottomSheet();
+                showThemeBottomSheet();
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    provider.appLanguage == "en"
-                        ? AppLocalizations.of(context)!.english
-                        : AppLocalizations.of(context)!.arabic,
+                    provider.isDarkMode()
+                        ? AppLocalizations.of(context)!.dark
+                        : AppLocalizations.of(context)!.light,
                     style: Theme.of(context).textTheme.headline3,
                   ),
                   Icon(
@@ -102,5 +103,10 @@ class _SettingTabState extends State<SettingTab> {
   void showLanguageBottomSheet() {
     showModalBottomSheet(
         context: context, builder: (context) => LanguageBottomSheet());
+  }
+
+  void showThemeBottomSheet() {
+    showModalBottomSheet(
+        context: context, builder: (context) => ThemeBottomSheet());
   }
 }

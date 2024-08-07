@@ -5,7 +5,9 @@ import 'package:islami/Quran/quran_tab.dart';
 import 'package:islami/home_tab/radio_tab.dart';
 import 'package:islami/home_tab/tasbeh_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/provider/app_config_provider.dart';
 import 'package:islami/settings/settings.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -20,14 +22,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Stack(
       children: [
-        Image.asset(
-          "Assets/default_bg.png",
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-        ),
+        provider.isDarkMode()
+            ? Image.asset(
+                "Assets/dark_bg.png",
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              )
+            : Image.asset(
+                "Assets/default_bg.png",
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              ),
         Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -63,11 +73,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       AssetImage("Assets/icon_sebha.png"),
                     ),
                     label: AppLocalizations.of(context)!.tasbeh),
-                BottomNavigationBarItem(
+                /* BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage("Assets/icon_radio.png"),
                     ),
-                    label: AppLocalizations.of(context)!.radio),
+                    label: AppLocalizations.of(context)!.radio),*/
                 BottomNavigationBarItem(
                     icon: Icon(Icons.settings),
                     label: AppLocalizations.of(context)!.settings),
@@ -84,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranTab(),
     HadethTab(),
     TasbehTab(),
-    RadioTab(),
+    // RadioTab(),
     SettingTab(),
   ];
 }

@@ -40,6 +40,7 @@ class IslamiApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(provider.appLanguage),
+      themeMode: provider.appTheme,
     );
   }
 }

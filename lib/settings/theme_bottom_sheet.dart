@@ -3,12 +3,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/provider/app_config_provider.dart';
 import 'package:provider/provider.dart';
 
-class LanguageBottomSheet extends StatefulWidget {
+class ThemeBottomSheet extends StatefulWidget {
   @override
-  State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
+  State<ThemeBottomSheet> createState() => _ThemeBottomSheetState();
 }
 
-class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
+class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
@@ -19,23 +19,23 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                provider.changeLanguage("en");
+                provider.changeTheme(ThemeMode.dark);
               },
-              child: provider.appLanguage == "en"
-                  ? getSelectedItemWidget(AppLocalizations.of(context)!.english)
+              child: provider.isDarkMode()
+                  ? getSelectedItemWidget(AppLocalizations.of(context)!.dark)
                   : getUnSelectedItemWidget(
-                      AppLocalizations.of(context)!.english)),
+                      AppLocalizations.of(context)!.dark)),
           SizedBox(
             height: 15,
           ),
           InkWell(
-            onTap: () {
-              provider.changeLanguage("ar");
-            },
-            child: provider.appLanguage == "ar"
-                ? getSelectedItemWidget(AppLocalizations.of(context)!.arabic)
-                : getUnSelectedItemWidget(AppLocalizations.of(context)!.arabic),
-          ),
+              onTap: () {
+                provider.changeTheme(ThemeMode.light);
+              },
+              child: provider.appTheme == ThemeMode.light
+                  ? getSelectedItemWidget(AppLocalizations.of(context)!.light)
+                  : getUnSelectedItemWidget(
+                      AppLocalizations.of(context)!.light)),
         ],
       ),
     );

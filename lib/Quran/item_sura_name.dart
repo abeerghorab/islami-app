@@ -16,7 +16,7 @@ class SuraName extends StatelessWidget {
         },
         child: Text(
           name,
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Theme.of(context).textTheme.subtitle1,
           textAlign: TextAlign.center,
         ),
       ),
